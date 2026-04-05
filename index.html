@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NEXUS | Core Intelligence</title>
+    <style>
+        :root { --red: #ff0033; --black: #050505; }
+        body { background: var(--black); color: #fff; font-family: 'Courier New', monospace; margin: 0; text-align: center; overflow: hidden; }
+        header { padding: 30px; border-bottom: 2px solid var(--red); box-shadow: 0 0 20px var(--red); background: #000; }
+        .logo { color: var(--red); font-size: 32px; letter-spacing: 8px; font-weight: 900; text-transform: uppercase; }
+        nav { margin: 20px 0; }
+        nav a { color: #888; text-decoration: none; margin: 0 15px; font-size: 12px; cursor: pointer; letter-spacing: 2px; transition: 0.3s; }
+        nav a:hover { color: var(--red); text-shadow: 0 0 5px var(--red); }
+        .hero { padding: 100px 20px; }
+        .btn-main { display: inline-block; margin-top: 30px; padding: 15px 40px; border: 2px solid var(--red); color: #fff; text-decoration: none; font-weight: bold; background: transparent; transition: 0.3s; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; }
+        .btn-main:hover { background: var(--red); box-shadow: 0 0 30px var(--red); }
+    </style>
+    <script>
+        window.history.replaceState(null, '', 'https://classroom.google.com');
+
+        function checkAccess(dest) {
+            let pass = prompt('ENTER CLEARANCE CODE:');
+            if (pass === 'simplylovely') {
+                localStorage.setItem("nexus_strikes", "0"); // Success: Reset strikes
+                window.location.replace(dest);
+            } else {
+                let strikes = parseInt(localStorage.getItem("nexus_strikes") || "0");
+                if (strikes === 0) {
+                    // Strike 1: Warning
+                    localStorage.setItem("nexus_strikes", "1");
+                    window.location.replace("warning.html");
+                } else {
+                    // Strike 2: Lockdown
+                    localStorage.setItem("nexus_strikes", "0"); // Reset for next cycle
+                    window.location.replace("locked-out.html");
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo">NEXUS // CORE</div>
+        <nav>
+            <a onclick="window.location.replace('index.html')">[ HOME ]</a>
+            <a onclick="checkAccess('paddock.html')">[ UPLINK_HUB ]</a>
+            <a onclick="window.location.replace('https://classroom.google.com')">[ EXIT ]</a>
+        </nav>
+    </header>
+    <div class="hero">
+        <h1 style="color:var(--red); letter-spacing: 5px;">SYSTEMS_ONLINE</h1>
+        <p style="color: #666;">Initialize secure uplink to proceed.</p>
+        <button class="btn-main" onclick="checkAccess('paddock.html')">Authorize Connection</button>
+    </div>
+</body>
+</html>

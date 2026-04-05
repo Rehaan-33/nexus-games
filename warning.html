@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NEXUS | SYSTEM WARNING</title>
+    <style>
+        body { background: #000; color: #ff0033; font-family: 'Courier New', monospace; text-align: center; padding-top: 100px; }
+        .box { max-width: 600px; margin: auto; border: 2px solid #ff0033; padding: 40px; background: rgba(255,0,0,0.05); box-shadow: 0 0 20px #ff0033; }
+        h1 { font-size: 30px; letter-spacing: 5px; }
+        p { color: #fff; font-size: 14px; line-height: 1.6; }
+        .btn { display: inline-block; margin-top: 20px; padding: 10px 20px; border: 1px solid #ff0033; color: #ff0033; text-decoration: none; cursor: pointer; transition: 0.3s; }
+        .btn:hover { background: #ff0033; color: #fff; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>UNAUTHORIZED ACCESS</h1>
+        <p>Your credentials were rejected by the Security Gate.<br><br>
+        WARNING: A second failed attempt will trigger a <strong>DISTRICT-LEVEL UPLINK LOCK</strong>.</p>
+        <a onclick="window.location.replace('index.html')" class="btn">RETRY CONNECTION</a>
+    </div>
+</body>
+</html>

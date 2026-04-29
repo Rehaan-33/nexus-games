@@ -1,22 +1,71 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>NEXUS | SYSTEM WARNING</title>
+    <title>Nexus Systems | Warning</title>
     <style>
-        body { background: #000; color: #ff0033; font-family: 'Courier New', monospace; text-align: center; padding-top: 100px; }
-        .box { max-width: 600px; margin: auto; border: 2px solid #ff0033; padding: 40px; background: rgba(255,0,0,0.05); box-shadow: 0 0 20px #ff0033; }
-        h1 { font-size: 30px; letter-spacing: 5px; }
-        p { color: #fff; font-size: 14px; line-height: 1.6; }
-        .btn { display: inline-block; margin-top: 20px; padding: 10px 20px; border: 1px solid #ff0033; color: #ff0033; text-decoration: none; cursor: pointer; transition: 0.3s; }
-        .btn:hover { background: #ff0033; color: #fff; }
+        body { background-color: #000; color: #fff; font-family: 'Arial Black', sans-serif; margin: 0; text-align: center; }
+        header { background: #111; padding: 20px; border-bottom: 4px solid #ff0000; }
+        .logo { color: #ff0000; font-size: 35px; letter-spacing: 2px; text-transform: uppercase; }
+        
+        /* MATCHES THE HOME PAGE BOX STYLE */
+        .warning-box { 
+            max-width: 600px; 
+            margin: 100px auto; 
+            padding: 40px; 
+            background: #111; 
+            border-left: 10px solid #ff0000; 
+            text-align: left; 
+            box-shadow: 0 0 30px rgba(255, 0, 0, 0.1);
+        }
+
+        h1 { color: #ff0000; font-size: 28px; margin-top: 0; letter-spacing: 2px; text-transform: uppercase; }
+        p { font-family: Arial, sans-serif; color: #ccc; font-size: 15px; line-height: 1.6; margin-bottom: 30px; }
+        
+        .btn-retry { 
+            background: #ff0000; 
+            color: #fff; 
+            padding: 15px 40px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            border-radius: 4px; 
+            display: inline-block; 
+            text-transform: uppercase; 
+            cursor: pointer; 
+            transition: 0.3s;
+            border: none;
+        }
+        .btn-retry:hover { background: #fff; color: #ff0000; transform: scale(1.05); }
+        
+        .status-tag { 
+            color: #ff0000; 
+            font-family: monospace; 
+            font-size: 12px; 
+            display: block; 
+            margin-bottom: 10px; 
+            font-weight: bold;
+        }
     </style>
+    <script>
+        // MASK HISTORY
+        window.history.replaceState(null, "", "https://google.com");
+    </script>
 </head>
 <body>
-    <div class="box">
+    <header>
+        <div class="logo">NEXUS SYSTEMS</div>
+    </header>
+
+    <div class="warning-box">
+        <span class="status-tag">[!] SECURITY_GATE_REJECTED</span>
         <h1>UNAUTHORIZED ACCESS</h1>
-        <p>Your credentials were rejected by the Security Gate.<br><br>
-        WARNING: A second failed attempt will trigger a <strong>DISTRICT-LEVEL UPLINK LOCK</strong>.</p>
-        <a onclick="window.location.replace('index.html')" class="btn">RETRY CONNECTION</a>
+        <p>Your credentials were rejected by the Nexus Security Gate. Access to the Resource Directory has been restricted.</p>
+        <p><strong>WARNING:</strong> A second failed attempt will trigger a district-level uplink lock and forward metadata to administrative logs.</p>
+        
+        <a onclick="window.location.replace('index.html')" class="btn-retry">Retry Connection</a>
     </div>
+
+    <footer style="position: fixed; bottom: 20px; width: 100%; color:#444; font-size:11px;">
+        &copy; 2026 Nexus Systems. Built on CodeHS.
+    </footer>
 </body>
 </html>
